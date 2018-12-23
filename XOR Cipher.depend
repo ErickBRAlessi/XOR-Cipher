@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1545587895 source:c:\users\erick\documents\code\xor cipher\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+
+1545587954 source:c:\users\erick\documents\code\xor cipher\md5.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+
