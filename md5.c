@@ -13,7 +13,7 @@
 
 // These vars will contain the hash
 uint32_t h0, h1, h2, h3;
-uint64_t md5Return;
+uint32_t md5Return;
 
 extern uint64_t md5(uint8_t *initial_msg, size_t initial_len) {
 

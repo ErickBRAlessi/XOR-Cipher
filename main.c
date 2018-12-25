@@ -14,21 +14,33 @@
 #include <stdint.h>
 
 char *getFileName(){
-
     return("abc");
 }
 
-uint64_t *getCipher(char *cipher){
-    uint64_t cipher64;
-    size_t len = strlen(cipher);
-    cipher64 = md5(cipher, len);
-    return(cipher64);
+//CREATE A MD5 TO "PROTECT" DIRECT ACCESS TO MEMORY. NOT HARD TO GET THROUGH
+uint32_t *getCipher(char *cipherMsg){
+    uint32_t cipher32;
+    size_t len = strlen(cipherMsg);
+    cipher32 = md5(cipherMsg, len);
+    return(cipher32);
+}
+
+//NEEDS TO CONVERT INT TO STRING FOR XOR CONVERTION.
+//TODO IMPLEMENT intToBin
+char *cipheredMsg(char *msg, uint32_t cipher32){
+    char32_t binCipher;
+    binCipher = intToBin(uint32_t cipher32);
+    for(int count = 0; count <= (sizeof(msg)/sizeof(char); count++){
+        msg[count] ^= cipher32[count];
+    }
+    return("");
 }
 
 int main()
 {
     getFileName();
-    printf("%u", getCipher("thisIsAUserKeyThatGonnaBeUsedToApplyTheSymetricCipher"));
-
+    cipheredMsg("ABC", getCipher(""));
     return 0;
 }
+
+
